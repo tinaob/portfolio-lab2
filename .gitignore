@@ -1,0 +1,11 @@
+# Windows and Mac system files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary Word/Office files
+~$*
+
+# Logs and dependencies
+*.log
+node_modules/

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Clementina's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Clementina's Portfolio</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html" class="active" aria-current="page">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>My Work</h2>
+        <p>A collection of projects I've built and the workspace behind them.</p>
+
+        <div class="gallery">
+
+            <figure>
+                <img src="images/gallery-01-threat-intel.png" alt="Screenshot of AI Threat Intelligence Platform README">
+                <figcaption><strong>AI Threat Intelligence Platform.</strong> <strong>Decision:</strong> I wanted threat intelligence to be easier to understand, so I collected data from REST APIs such as AlienVault OTX, removed duplicates, and used AI to summarise threats and map them to MITRE ATT&amp;CK. <strong>Difficulty:</strong> Combining information from different sources without losing important threat details. <strong>Outcome:</strong> The project brings threat information together and shows summaries and ATT&amp;CK mappings in a dashboard.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/gallery-02-cloud-scanner.png" alt="Screenshot of Cloud Security Misconfiguration Scanner README">
+                <figcaption><strong>Cloud Security Misconfiguration Scanner.</strong> <strong>Decision:</strong> I wanted to learn how to find common AWS security risks with code, so I used Python and boto3 to work with AWS services. <strong>Difficulty:</strong> Collecting the configuration data and checking different issues, such as missing MFA, publicly accessible S3 buckets and old access keys. <strong>Outcome:</strong> The scanner checks selected misconfigurations and organises the findings into a structured report.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/gallery-03-log-analyzer.png" alt="Screenshot of Log Analyzer SIEM Simulation README">
+                <figcaption><strong>Log Analyzer / SIEM Simulation.</strong> <strong>Decision:</strong> I wanted hands-on practice analysing security logs, so I focused on patterns such as repeated failed logins and unusual login behaviour. <strong>Difficulty:</strong> Telling potentially suspicious patterns apart from ordinary activity, and presenting the findings clearly. <strong>Outcome:</strong> The project organises events and highlights activity that needs further investigation.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/gallery-04-vuln-scanner.png" alt="Screenshot of Vulnerability Scanner README">
+                <figcaption>Vulnerability Scanner (2024): combines Python and Nmap for network discovery and risk assessment.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/gallery-05-phishing-analyzer.png" alt="Screenshot of Phishing Email Analyzer README">
+                <figcaption><strong>Phishing Email Analyzer.</strong> <strong>Decision:</strong> I wanted to understand how a suspicious email can be assessed with technical evidence, so I used email-header analysis together with the VirusTotal API. <strong>Difficulty:</strong> Bringing information from the email headers and the external threat-intelligence results together to judge whether an email might be malicious. <strong>Outcome:</strong> The tool inspects email information and adds external threat-intelligence data to the analysis.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/gallery-06-fashion-blog.png" alt="Screenshot of Fashion Blog project README">
+                <figcaption>Fashion Blog (2023): an early HTML5 and CSS3 project practicing semantic structure and responsive layout.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/gallery-07-wine-festival.png" alt="Screenshot of Wine Festival Schedule project">
+                <figcaption>Wine Festival Schedule (2023): an HTML table based event schedule page.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/gallery-08-workspace.png" alt="Photo of my workspace">
+                <figcaption>My workspace, where most of these projects came to life.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/gallery-09-fashion-blog-live.png" alt="Live screenshot of deployed Fashion Blog website">
+                <figcaption>Live view of my Fashion Blog (2023), deployed on GitHub Pages, an early project practicing semantic HTML5 and CSS3 layout.</figcaption>
+            </figure>
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <p>Email: clementinaobasi@gmail.com</p>
+    <p>
+        <a href="https://github.com/tinaob" target="_blank">GitHub</a> |
+        <a href="https://www.linkedin.com/in/clementina-obasi-b89a3381" target="_blank">LinkedIn</a>
+    </p>
+    <p>&copy; 2026 Clementina's Portfolio</p>
+</footer>
+
+</body>
+</html>
