@@ -9,3 +9,10 @@ const websiteInput = document.getElementById("website");
 const commentsCounter = document.getElementById("comments-counter");
 const clearButton = document.getElementById("clear-button");
 const formStatus = document.getElementById("form-status");
+
+function showFieldError(input, message) {
+    const errorSpan = document.getElementById(input.id + "-error");
+    errorSpan.textContent = message;
+    input.classList.remove("input-valid");
+    input.classList.add("input-error");
+}
