@@ -16,3 +16,9 @@ function showFieldError(input, message) {
     input.classList.remove("input-valid");
     input.classList.add("input-error");
 }
+
+function clearFieldError(input) {
+    const errorSpan = document.getElementById(input.id + "-error");
+    errorSpan.textContent = "";
+    input.classList.remove("input-error");
+}
