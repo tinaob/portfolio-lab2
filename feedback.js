@@ -22,3 +22,25 @@ function clearFieldError(input) {
     errorSpan.textContent = "";
     input.classList.remove("input-error");
 }
+
+function validateFullName() {
+    const value = fullNameInput.value.trim();
+    const namePattern = /^[\p{L}\s'\u2019-]+$/u;
+
+    if (value === "") {
+        showFieldError(fullNameInput, "Please enter your full name.");
+        return false;
+    }
+    if (value.length < 2) {
+        showFieldError(fullNameInput, "Name must be at least 2 characters.");
+        return false;
+    }
+    if (!namePattern.test(value)) {
+        showFieldError(fullNameInput, "Use only letters, spaces, apostrophes and hyphens.");
+        return false;
+    }
+
+    clearFieldError(fullNameInput);
+    fullNameInput.classList.add("input-valid");
+    return true;
+}
