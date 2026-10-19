@@ -44,3 +44,5 @@ function validateFullName() {
     fullNameInput.classList.add("input-valid");
     return true;
 }
+
+fullNameInput.addEventListener("blur", validateFullName);
