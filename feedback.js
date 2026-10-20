@@ -77,3 +77,5 @@ function validateTopic() {
     topicSelect.classList.add("input-valid");
     return true;
 }
+
+topicSelect.addEventListener("change", validateTopic);
