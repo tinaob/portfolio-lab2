@@ -46,3 +46,21 @@ function validateFullName() {
 }
 
 fullNameInput.addEventListener("blur", validateFullName);
+
+function validateEmail() {
+    const value = emailInput.value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (value === "") {
+        showFieldError(emailInput, "Please enter your email address.");
+        return false;
+    }
+    if (!emailPattern.test(value)) {
+        showFieldError(emailInput, "Please enter a valid email address, like name@example.com.");
+        return false;
+    }
+
+    clearFieldError(emailInput);
+    emailInput.classList.add("input-valid");
+    return true;
+}
