@@ -79,3 +79,19 @@ function validateTopic() {
 }
 
 topicSelect.addEventListener("change", validateTopic);
+
+const minCommentLength = 15;
+
+function updateCommentsCounter() {
+    const length = commentsInput.value.length;
+
+    if (length >= minCommentLength) {
+        commentsCounter.textContent = length + " characters (minimum reached)";
+        commentsCounter.classList.remove("counter-bad");
+        commentsCounter.classList.add("counter-good");
+    } else {
+        commentsCounter.textContent = length + " / " + minCommentLength + " characters minimum";
+        commentsCounter.classList.remove("counter-good");
+        commentsCounter.classList.add("counter-bad");
+    }
+}
