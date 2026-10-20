@@ -115,3 +115,5 @@ function validateComments() {
     commentsInput.classList.add("input-valid");
     return true;
 }
+
+commentsInput.addEventListener("blur", validateComments);
