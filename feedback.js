@@ -95,3 +95,6 @@ function updateCommentsCounter() {
         commentsCounter.classList.add("counter-bad");
     }
 }
+
+commentsInput.addEventListener("input", updateCommentsCounter);
+updateCommentsCounter();
