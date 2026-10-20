@@ -64,3 +64,5 @@ function validateEmail() {
     emailInput.classList.add("input-valid");
     return true;
 }
+
+emailInput.addEventListener("blur", validateEmail);
