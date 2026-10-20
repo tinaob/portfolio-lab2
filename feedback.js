@@ -98,3 +98,20 @@ function updateCommentsCounter() {
 
 commentsInput.addEventListener("input", updateCommentsCounter);
 updateCommentsCounter();
+
+function validateComments() {
+    const value = commentsInput.value.trim();
+
+    if (value === "") {
+        showFieldError(commentsInput, "Please write a comment.");
+        return false;
+    }
+    if (value.length < minCommentLength) {
+        showFieldError(commentsInput, "Comments must be at least " + minCommentLength + " characters.");
+        return false;
+    }
+
+    clearFieldError(commentsInput);
+    commentsInput.classList.add("input-valid");
+    return true;
+}
