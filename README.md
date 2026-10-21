@@ -10,7 +10,7 @@ Grade 5
 
 Features will be added here as I build them:
 
-- [ ] Feedback form with validation (Grade 3)
+- [x] Feedback form with validation (Grade 3)
 - [ ] Skills cards with filter and sort (Grade 4)
 - [ ] Display panel with text size and contrast settings (Grade 5)
 
