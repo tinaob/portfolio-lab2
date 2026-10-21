@@ -40,6 +40,30 @@ const skills = [
         proficiency: 4,
         yearsExperience: 2,
         description: "Self-taught through Codecademy and real projects, now working as a fullstack engineer."
+    },
+        {
+        id: 6,
+        name: "IT Project Management",
+        category: "Project Delivery",
+        proficiency: 5,
+        yearsExperience: 9,
+        description: "Managed technology project delivery in a regulated banking environment for nearly a decade."
+    },
+    {
+        id: 7,
+        name: "Test Automation with Selenium",
+        category: "Development & Testing",
+        proficiency: 3,
+        yearsExperience: 2,
+        description: "Ran regression and UAT test cases with Selenium and tracked defects in Jira."
+    },
+    {
+        id: 8,
+        name: "Frontend Development (HTML, CSS, JavaScript)",
+        category: "Development & Testing",
+        proficiency: 4,
+        yearsExperience: 2,
+        description: "Built and published real websites with semantic HTML, CSS and vanilla JavaScript."
     }
 ];
 
