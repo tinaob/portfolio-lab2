@@ -117,3 +117,27 @@ function validateComments() {
 }
 
 commentsInput.addEventListener("blur", validateComments);
+
+function validateWebsite() {
+    const value = websiteInput.value.trim();
+
+    if (value === "") {
+        clearFieldError(websiteInput);
+        websiteInput.classList.remove("input-valid");
+        return true;
+    }
+
+    try {
+        const url = new URL(value);
+        if (url.protocol !== "http:" && url.protocol !== "https:") {
+            throw new Error("Wrong protocol");
+        }
+    } catch (error) {
+        showFieldError(websiteInput, "Please enter a valid web address, like https://example.com.");
+        return false;
+    }
+
+    clearFieldError(websiteInput);
+    websiteInput.classList.add("input-valid");
+    return true;
+}
