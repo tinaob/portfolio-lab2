@@ -67,4 +67,24 @@ const skills = [
     }
 ];
 
-console.log(skills.length);
+
+const skillsContainer = document.getElementById("skills-container");
+
+function renderSkills(list) {
+    skillsContainer.innerHTML = "";
+
+    list.forEach(function (skill) {
+        const card = document.createElement("article");
+        card.className = "skill-card";
+        card.innerHTML = `
+            <h3>${skill.name}</h3>
+            <p class="skill-category">${skill.category}</p>
+            <p>Proficiency: ${skill.proficiency} / 5</p>
+            <p>Experience: ${skill.yearsExperience} years</p>
+            <p>${skill.description}</p>
+        `;
+        skillsContainer.appendChild(card);
+    });
+}
+
+renderSkills(skills);
