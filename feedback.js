@@ -163,7 +163,9 @@ function handleSubmit(event) {
         return;
     }
 
-    console.log("Form is valid");
+    const name = fullNameInput.value.trim();
+resetForm();
+formStatus.textContent = "Thanks for your feedback, " + name + "!";
 }
 
 form.addEventListener("submit", handleSubmit);
