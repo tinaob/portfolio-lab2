@@ -167,3 +167,18 @@ function handleSubmit(event) {
 }
 
 form.addEventListener("submit", handleSubmit);
+
+function resetForm() {
+    form.reset();
+
+    const fields = [fullNameInput, emailInput, topicSelect, commentsInput, websiteInput];
+    fields.forEach(function (field) {
+        clearFieldError(field);
+        field.classList.remove("input-valid");
+    });
+
+    updateCommentsCounter();
+    formStatus.textContent = "";
+}
+
+clearButton.addEventListener("click", resetForm);
