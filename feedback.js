@@ -141,3 +141,5 @@ function validateWebsite() {
     websiteInput.classList.add("input-valid");
     return true;
 }
+
+websiteInput.addEventListener("blur", validateWebsite);
