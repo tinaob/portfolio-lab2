@@ -164,8 +164,12 @@ function handleSubmit(event) {
     }
 
     const name = fullNameInput.value.trim();
-resetForm();
-formStatus.textContent = "Thanks for your feedback, " + name + "!";
+    resetForm();
+    formStatus.textContent = "Thanks for your feedback, " + name + "!";
+
+    setTimeout(function () {
+        formStatus.textContent = "";
+    }, 4000);
 }
 
 form.addEventListener("submit", handleSubmit);
