@@ -149,3 +149,21 @@ function validateWebsite() {
 }
 
 websiteInput.addEventListener("blur", validateWebsite);
+
+function handleSubmit(event) {
+    event.preventDefault();
+
+    const nameValid = validateFullName();
+    const emailValid = validateEmail();
+    const topicValid = validateTopic();
+    const commentsValid = validateComments();
+    const websiteValid = validateWebsite();
+
+    if (!nameValid || !emailValid || !topicValid || !commentsValid || !websiteValid) {
+        return;
+    }
+
+    console.log("Form is valid");
+}
+
+form.addEventListener("submit", handleSubmit);
