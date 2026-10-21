@@ -127,16 +127,22 @@ function validateWebsite() {
         return true;
     }
 
+    let address = value;
+    if (!/^https?:\/\//i.test(address)) {
+        address = "https://" + address;
+    }
+
     try {
-        const url = new URL(value);
-        if (url.protocol !== "http:" && url.protocol !== "https:") {
-            throw new Error("Wrong protocol");
+        const url = new URL(address);
+        if (!url.hostname.includes(".")) {
+            throw new Error("No dot in the host name");
         }
     } catch (error) {
-        showFieldError(websiteInput, "Please enter a valid web address, like https://example.com.");
+        showFieldError(websiteInput, "Please enter a valid website, like example.com.");
         return false;
     }
 
+    websiteInput.value = address;
     clearFieldError(websiteInput);
     websiteInput.classList.add("input-valid");
     return true;
