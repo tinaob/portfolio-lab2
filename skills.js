@@ -88,3 +88,26 @@ function renderSkills(list) {
 }
 
 renderSkills(skills);
+
+const filterButtons = document.querySelectorAll("#skills-filters button");
+
+function handleFilterClick(event) {
+    const chosen = event.target.dataset.category;
+
+    filterButtons.forEach(function (button) {
+        button.setAttribute("aria-pressed", button === event.target ? "true" : "false");
+    });
+
+    if (chosen === "all") {
+        renderSkills(skills);
+    } else {
+        const filtered = skills.filter(function (skill) {
+            return skill.category === chosen;
+        });
+        renderSkills(filtered);
+    }
+}
+
+filterButtons.forEach(function (button) {
+    button.addEventListener("click", handleFilterClick);
+});
