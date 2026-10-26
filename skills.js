@@ -87,27 +87,47 @@ function renderSkills(list) {
     });
 }
 
-renderSkills(skills);
-
 const filterButtons = document.querySelectorAll("#skills-filters button");
+const sortSelect = document.getElementById("sort-select");
+const skillsCount = document.getElementById("skills-count");
+
+let currentCategory = "all";
+
+function updateSkills() {
+    const filtered = skills.filter(function (skill) {
+        return currentCategory === "all" || skill.category === currentCategory;
+    });
+
+    const sortBy = sortSelect.value;
+
+    filtered.sort(function (a, b) {
+        if (sortBy === "proficiency") {
+            return b.proficiency - a.proficiency;
+        }
+        if (sortBy === "years") {
+            return b.yearsExperience - a.yearsExperience;
+        }
+        return a.name.localeCompare(b.name);
+    });
+
+    renderSkills(filtered);
+    skillsCount.textContent = "Showing " + filtered.length + " of " + skills.length + " skills";
+}
 
 function handleFilterClick(event) {
-    const chosen = event.target.dataset.category;
+    currentCategory = event.target.dataset.category;
 
     filterButtons.forEach(function (button) {
         button.setAttribute("aria-pressed", button === event.target ? "true" : "false");
     });
 
-    if (chosen === "all") {
-        renderSkills(skills);
-    } else {
-        const filtered = skills.filter(function (skill) {
-            return skill.category === chosen;
-        });
-        renderSkills(filtered);
-    }
+    updateSkills();
 }
 
 filterButtons.forEach(function (button) {
     button.addEventListener("click", handleFilterClick);
 });
+
+sortSelect.addEventListener("change", updateSkills);
+
+updateSkills();
