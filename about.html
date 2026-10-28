@@ -6,6 +6,7 @@
     <title>About - Clementina's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="skills.js" defer></script>
+    <script src="display.js" defer></script>
 </head>
 <body>
 
@@ -21,6 +22,21 @@
 </header>
 
 <main>
+    <section id="display-panel" aria-labelledby="display-heading">
+        <h2 id="display-heading">Display settings</h2>
+
+        <div class="display-group" role="group" aria-label="Text size">
+            <span class="display-label">Text size:</span>
+            <button type="button" data-textsize="small" aria-pressed="false">Small</button>
+            <button type="button" data-textsize="medium" aria-pressed="true">Medium</button>
+            <button type="button" data-textsize="large" aria-pressed="false">Large</button>
+        </div>
+
+        <div class="display-group">
+            <span class="display-label">Contrast:</span>
+            <button type="button" id="contrast-toggle" aria-pressed="false">High contrast</button>
+        </div>
+    </section>
     <section>
     <h2>About Me</h2>
     <p>My first real encounter with computers was in elementary school, where we were taught MS-DOS and how to use floppy disks. I remember being intrigued by how the whole system worked, and that curiosity is what first made me want to become a computer engineer.</p>
