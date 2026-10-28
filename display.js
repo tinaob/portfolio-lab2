@@ -47,7 +47,9 @@ function applySettings() {
         button.setAttribute("aria-pressed", isActive ? "true" : "false");
     });
 
-    contrastToggle.setAttribute("aria-pressed", settings.contrast === "high" ? "true" : "false");
+    if (contrastToggle) {
+        contrastToggle.setAttribute("aria-pressed", settings.contrast === "high" ? "true" : "false");
+    }
     saveSettings();
 }
 
@@ -65,7 +67,9 @@ sizeButtons.forEach(function (button) {
     button.addEventListener("click", handleSizeClick);
 });
 
-contrastToggle.addEventListener("click", handleContrastClick);
+if (contrastToggle) {
+    contrastToggle.addEventListener("click", handleContrastClick);
+}
 
 loadSettings();
 applySettings();
