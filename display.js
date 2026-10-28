@@ -6,6 +6,32 @@ const settings = {
     contrast: "normal"
 };
 
+function saveSettings() {
+    try {
+        localStorage.setItem("textSize", settings.textSize);
+        localStorage.setItem("contrast", settings.contrast);
+    } catch (error) {
+        // Storage can be blocked, so the settings are just not remembered
+    }
+}
+
+function loadSettings() {
+    try {
+        const savedSize = localStorage.getItem("textSize");
+        const savedContrast = localStorage.getItem("contrast");
+
+        if (savedSize === "small" || savedSize === "medium" || savedSize === "large") {
+            settings.textSize = savedSize;
+        }
+
+        if (savedContrast === "normal" || savedContrast === "high") {
+            settings.contrast = savedContrast;
+        }
+    } catch (error) {
+        // Storage can be blocked, so the defaults are used
+    }
+}
+
 function applySettings() {
     const root = document.documentElement;
 
@@ -22,6 +48,7 @@ function applySettings() {
     });
 
     contrastToggle.setAttribute("aria-pressed", settings.contrast === "high" ? "true" : "false");
+    saveSettings();
 }
 
 function handleSizeClick(event) {
@@ -40,4 +67,5 @@ sizeButtons.forEach(function (button) {
 
 contrastToggle.addEventListener("click", handleContrastClick);
 
+loadSettings();
 applySettings();
