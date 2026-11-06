@@ -104,6 +104,9 @@ function updateSkills() {
         if (sortBy === "proficiency") {
             return b.proficiency - a.proficiency;
         }
+        if (sortBy === "proficiencyAsc") {
+            return a.proficiency - b.proficiency;
+        }
         if (sortBy === "years") {
             return b.yearsExperience - a.yearsExperience;
         }
